@@ -41,11 +41,11 @@ That's all. now the jobs from this queue will be consumed on at a time. don't fo
 ## Contributors
 - https://github.com/tzachif
 
-### License and Copyrights"
-See license for this gem.
+### License and Copyrights  
+See license for this gem.  
 
-This gem make use of leandromoreira/redlock-rb gem/code.
-Terms of use for leandromoreira/redlock-rb are as follows:
+This gem make use of leandromoreira/redlock-rb gem/code.  
+Terms of use for leandromoreira/redlock-rb are as follows:  
 
 Copyright (c) 2014-2015, Salvatore Sanfilippo <antirez at gmail dot com>
 Copyright (c) 2014-2015, Leandro Moreira <leandro dot ribeiro dot moreira at gmail dot com>
