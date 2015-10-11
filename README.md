@@ -28,7 +28,7 @@ When creating a sidekiq worker it should be using a queue with sidekiq_single as
 ```ruby
 sidekiq_options queue: :sidekiq_single_my_queue
 ```
-That's all. now the jobs from this queue will be consumed on at a time. don't forget to update the queue in the sidekiq.yaml file.
+That's all. now the jobs from this queue will be consumed one at a time. don't forget to update the queue in the sidekiq.yaml file.
 
 ## Contributing
 
