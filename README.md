@@ -1,21 +1,45 @@
-# README #
+# SidekiqSingle
 
-This README would normally document whatever steps are necessary to get your application up and running.
+A way to allow a queue to be consumed job by job at any point in time, no matter if there are several processes and each process is using sevarl threads. It will not allow more than one job to run at any given time. the jobs will be exceuted in the same order that they were queued.
 
-### What is this repository for? ###
+## Requirements
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+Only sidekiq 3 is supported.  
+Only basic sidekiq is supported (Pro is not supported!)  
+Multiple Redis instances are NOT supported.  
+Retries of jobs is NOT supported.  
 
-### How do I get set up? ###
+## Installation
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+Add this line to your application's Gemfile:
+
+    gem 'sidekiq_single'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install sidekiq_single
+
+## Usage
+When creating a sidekiq worker it should be using a queue with sidekiq_single as a prefix.
+```ruby
+sidekiq_options queue: :sidekiq_single_my_queue
+```
+That's all. now the jobs from this queue will be consumed on at a time. don't forget to update the queue in the sidekiq.yaml file.
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
+
+## Contributors
+- https://github.com/tzachif
 
 ### License and Copyrights"
 See license for this gem.
@@ -49,15 +73,3 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
