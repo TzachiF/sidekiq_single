@@ -1,6 +1,6 @@
 # SidekiqSingle
 
-A way to allow a queue to be consumed job by job at any point in time, no matter if there are several processes and each process is using sevarl threads. It will not allow more than one job to run at any given time. the jobs will be exceuted in the same order that they were queued.
+A way to allow a queue to be consumed job by job at any point in time, no matter if there are several processes and each process is using several threads. It will not allow more than one job to run at any given time. the jobs will be exceuted in the same order that they were queued.
 
 ## Requirements
 
