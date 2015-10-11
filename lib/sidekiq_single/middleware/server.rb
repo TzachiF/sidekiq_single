@@ -12,15 +12,12 @@ module SidekiqSingle
         @queue = queue
         if _single_queue?
           begin
-            puts ">>>>> it is a single queue"
             yield
           ensure  
             conn = Redis.new
-            puts ">>>>>>>>> server queue for lock #{queue}"
             lockdata = conn.get("#{queue}:lock")
             lockdata = JSON.parse(lockdata)
             lockdata = lockdata.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
-            puts ">>>>>> lock data #{lockdata}"
             lock_manager = Redlock::Client.new([conn])
             lock_manager.unlock(lockdata)     
           end
