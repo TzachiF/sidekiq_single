@@ -1,5 +1,5 @@
 # SidekiqSingle
-
+[![Code Climate](https://codeclimate.com/github/TzachiF/sidekiq_single/badges/gpa.svg)](https://codeclimate.com/github/TzachiF/sidekiq_single) [![Test Coverage](https://codeclimate.com/github/TzachiF/sidekiq_single/badges/coverage.svg)](https://codeclimate.com/github/TzachiF/sidekiq_single/coverage)
 A way to allow a queue to be consumed job by job at any point in time, no matter if there are several processes and each process is using several threads. It will not allow more than one job to run at any given time. the jobs will be exceuted in the same order that they were queued.
 
 ## Requirements
