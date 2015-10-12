@@ -7,7 +7,7 @@ A way to allow a queue to be consumed job by job at any point in time, no matter
 Only sidekiq 3 is supported.  
 Only basic sidekiq is supported (Pro is not supported!)  
 Multiple Redis instances are NOT supported.  
-Retries of jobs is NOT supported.  
+Retries of jobs are NOT supported.  
 
 ## Installation
 
